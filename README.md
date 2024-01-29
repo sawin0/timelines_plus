@@ -4,7 +4,7 @@ Note: this is just updated version of this package: https://pub.dev/packages/tim
 
 <p align="center">
   <a href="https://pub.dartlang.org/packages/timelines_plus">
-    <img src="https://img.shields.io/pub/v/timelines.svg" alt="Pub" />
+    <img src="https://img.shields.io/pub/v/timelines_plus.svg" alt="Pub" />
   </a>
   <a href="https://github.com/Solido/awesome-flutter">
     <img alt="Awesome Flutter" src="https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true" />
