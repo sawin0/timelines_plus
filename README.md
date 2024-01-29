@@ -58,7 +58,7 @@ Check it out on the [web](https://chulwoo.dev/timelines/) or look at the [source
 Add this to your package's pubspec.yaml file:
 ``` yaml
 dependencies:
-  timelines: ^[latest_version]
+  timelines_plus: ^[latest_version]
 ```
 
 #### 2. Install it
@@ -74,7 +74,7 @@ Alternatively, your editor might support flutter pub get. Check the docs for you
 #### 3. Import it
 Now in your Dart code, you can use:
 ``` dart
-import 'package:timelines/timelines.dart';
+import 'package:timelines_plus/timelines_plus.dart';
 ```
 
 ## Basic Usage
@@ -95,7 +95,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-Check the [Example](https://github.com/chulwoo-park/timelines/tree/main/example) or the [API reference](https://pub.dev/documentation/timelines/latest/) for more details.
+Check the [Example](https://github.com/sawin0/timelines_plus/tree/main/example) or the [API reference](https://pub.dev/documentation/timelines_plus/latest/) for more details.
 
 ## Components
 
@@ -447,7 +447,7 @@ Also their constructors are similar to ScrollView and Flex.
 
 The main difference is that they has TimelineTheme as an ancestor.
 
-The `tileBuilder` constructor provides more powerful features using [TimelineTileBuilder](https://pub.dev/documentation/timelines/latest/timelines/TimelineTileBuilder-class.html).
+The `tileBuilder` constructor provides more powerful features using [TimelineTileBuilder](https://pub.dev/documentation/timelines_plus/latest/timelines/TimelineTileBuilder-class.html).
 
 If you don't need TimelineTileBuilder, you can use other flutter widgets like ListView, Column, Row, etc.
 
@@ -456,16 +456,17 @@ Even if you use the flutter widget, you can use TimelineTheme.
 
 # Documentation
 
-See full [documentation](https://pub.dev/documentation/timelines/latest/)
+See full [documentation](https://pub.dev/documentation/timelines_plus/latest/)
 
 # Changelog
 
-See [CHANGELOG.md](https://github.com/chulwoo-park/timelines/blob/main/CHANGELOG.md).
+See [CHANGELOG.md](https://github.com/sawin0/timelines_plus/blob/main/CHANGELOG.md).
 
-# Code of conduct
+[//]: # (# Code of conduct)
 
-See [CODE_OF_CONDUCT.md](https://github.com/chulwoo-park/timelines/blob/main/CODE_OF_CONDUCT.md).
+[//]: # ()
+[//]: # (See [CODE_OF_CONDUCT.md]&#40;https://github.com/sawin0/timelines_plus/blob/main/CODE_OF_CONDUCT.md&#41;.)
 
 # License
 
-[MIT](https://github.com/chulwoo-park/timelines/blob/main/LICENSE)
+[MIT](https://github.com/sawin0/timelines_plus/blob/main/LICENSE)
