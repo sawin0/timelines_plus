@@ -1,3 +1,7 @@
+## 1.0.4
+
+* Upgraded example project with the latest version of Flutter.
+
 ## 1.0.3
 
 * Upgraded dependencies to make the package compatible with the latest version of Flutter.

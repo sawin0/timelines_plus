@@ -1,4 +1,4 @@
-library timelines_plus;
+library;
 
 /// Widgets that make it easy to implement the timeline UI component.
 export 'package:timelines_plus/src/connector_theme.dart';
