@@ -1,3 +1,7 @@
+## 1.0.5
+
+* Passed static analysis.
+
 ## 1.0.4
 
 * Upgraded example project with the latest version of Flutter.
