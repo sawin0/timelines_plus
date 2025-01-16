@@ -1,3 +1,7 @@
+## 1.0.6
+
+* Passed static analysis.
+
 ## 1.0.5
 
 * Passed static analysis.

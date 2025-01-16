@@ -1,6 +1,6 @@
 name: timelines_plus
 description: "Just updated version of Timelines package. Note: this is just updated version of this package: https://pub.dev/packages/timelines "
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/sawin0/timelines_plus
 
 environment:
