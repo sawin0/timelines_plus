@@ -187,7 +187,7 @@ class TimelineTile extends StatelessWidget {
           }
         }
         break;
-      }
+    }
 
     result = Align(
       child: result,
