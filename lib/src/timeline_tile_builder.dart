@@ -464,8 +464,7 @@ class TimelineTileBuilder {
         case ContentsAlign.reverse:
           return oppositeContentsBuilder?.call(context, index);
         case ContentsAlign.basic:
-        default:
-          return contentsBuilder?.call(context, index);
+        return contentsBuilder?.call(context, index);
       }
     };
   }

@@ -187,9 +187,7 @@ class TimelineTile extends StatelessWidget {
           }
         }
         break;
-      default:
-        throw ArgumentError.value(direction, '$direction is invalid.');
-    }
+      }
 
     result = Align(
       child: result,
