@@ -83,7 +83,6 @@ class _Timeline1 extends StatelessWidget {
                   backgroundColor: Color(0xffebcb62),
                 );
               case _TimelineStatus.todo:
-              default:
                 return const OutlinedDotIndicator(
                   color: Color(0xffbabdc0),
                   backgroundColor: Color(0xffe6e7e9),
