@@ -21,6 +21,7 @@ class ProcessTimelinePage extends StatefulWidget {
 
 class ProcessTimelinePageState extends State<ProcessTimelinePage> {
   int _processIndex = 2;
+  final TextEditingController _controller = TextEditingController();
 
   Color getColor(int index) {
     if (index == _processIndex) {
@@ -33,140 +34,173 @@ class ProcessTimelinePageState extends State<ProcessTimelinePage> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: const TitleAppBar('Process Timeline'),
-      body: Timeline.tileBuilder(
-        theme: TimelineThemeData(
-          direction: Axis.horizontal,
-          connectorTheme: const ConnectorThemeData(
-            space: 30.0,
-            thickness: 5.0,
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              style: const TextStyle(fontSize: 18.0, color: Colors.black),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Enter a index',
+                hintText: 'Enter your desired index',
+              ),
+              controller: _controller,
+            ),
           ),
-        ),
-        builder: TimelineTileBuilder.connected(
-          connectionDirection: ConnectionDirection.before,
-          itemExtentBuilder: (_, __) =>
-              MediaQuery.of(context).size.width / _processes.length,
-          oppositeContentsBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 15.0),
-              child: Image.asset(
-                'assets/images/process_timeline/status${index + 1}.png',
-                width: 50.0,
-                color: getColor(index),
-              ),
-            );
-          },
-          contentsBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(top: 15.0),
-              child: Text(
-                _processes[index],
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: getColor(index),
+          Expanded(
+            child: Timeline.tileBuilder(
+              shrinkWrap: true,
+              theme: TimelineThemeData(
+                direction: Axis.horizontal,
+                connectorTheme: const ConnectorThemeData(
+                  space: 30.0,
+                  thickness: 5.0,
                 ),
               ),
-            );
-          },
-          indicatorBuilder: (_, index) {
-            Color color;
-            Widget? child;
-            if (index == _processIndex) {
-              color = inProgressColor;
-              child = const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircularProgressIndicator(
-                  strokeWidth: 3.0,
-                  valueColor: AlwaysStoppedAnimation(Colors.white),
-                ),
-              );
-            } else if (index < _processIndex) {
-              color = completeColor;
-              child = const Icon(
-                Icons.check,
-                color: Colors.white,
-                size: 15.0,
-              );
-            } else {
-              color = todoColor;
-            }
+              builder: TimelineTileBuilder.connected(
+                connectionDirection: ConnectionDirection.before,
+                itemExtentBuilder: (_, __) =>
+                    MediaQuery.of(context).size.width / _processes.length,
+                oppositeContentsBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 15.0),
+                    child: Image.asset(
+                      'assets/images/process_timeline/status${index + 1}.png',
+                      width: 50.0,
+                      color: getColor(index),
+                    ),
+                  );
+                },
+                contentsBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 15.0),
+                    child: Text(
+                      _processes[index],
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: getColor(index),
+                      ),
+                    ),
+                  );
+                },
+                indicatorBuilder: (_, index) {
+                  Color color;
+                  Widget? child;
+                  if (index == _processIndex) {
+                    color = inProgressColor;
+                    child = const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: CircularProgressIndicator(
+                        strokeWidth: 3.0,
+                        valueColor: AlwaysStoppedAnimation(Colors.white),
+                      ),
+                    );
+                  } else if (index < _processIndex) {
+                    color = completeColor;
+                    child = const Icon(
+                      Icons.check,
+                      color: Colors.white,
+                      size: 15.0,
+                    );
+                  } else {
+                    color = todoColor;
+                  }
 
-            if (index <= _processIndex) {
-              return Stack(
-                children: [
-                  CustomPaint(
-                    size: const Size(30.0, 30.0),
-                    painter: _BezierPainter(
-                      color: color,
-                      drawStart: index > 0,
-                      drawEnd: index < _processIndex,
-                    ),
-                  ),
-                  DotIndicator(
-                    size: 30.0,
-                    color: color,
-                    child: child,
-                  ),
-                ],
-              );
-            } else {
-              return Stack(
-                children: [
-                  CustomPaint(
-                    size: const Size(15.0, 15.0),
-                    painter: _BezierPainter(
-                      color: color,
-                      drawEnd: index < _processes.length - 1,
-                    ),
-                  ),
-                  OutlinedDotIndicator(
-                    borderWidth: 4.0,
-                    color: color,
-                  ),
-                ],
-              );
-            }
-          },
-          connectorBuilder: (_, index, type) {
-            if (index > 0) {
-              if (index == _processIndex) {
-                final prevColor = getColor(index - 1);
-                final color = getColor(index);
-                List<Color> gradientColors;
-                if (type == ConnectorType.start) {
-                  gradientColors = [Color.lerp(prevColor, color, 0.5)!, color];
-                } else {
-                  gradientColors = [
-                    prevColor,
-                    Color.lerp(prevColor, color, 0.5)!
-                  ];
-                }
-                return DecoratedLineConnector(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: gradientColors,
-                    ),
-                  ),
-                );
-              } else {
-                return SolidLineConnector(
-                  color: getColor(index),
-                );
-              }
-            } else {
-              return null;
-            }
-          },
-          itemCount: _processes.length,
-        ),
+                  if (index <= _processIndex) {
+                    return Stack(
+                      children: [
+                        CustomPaint(
+                          size: const Size(30.0, 30.0),
+                          painter: _BezierPainter(
+                            color: color,
+                            drawStart: index > 0,
+                            drawEnd: index < _processIndex,
+                          ),
+                        ),
+                        DotIndicator(
+                          size: 30.0,
+                          color: color,
+                          child: child,
+                        ),
+                      ],
+                    );
+                  } else {
+                    return Stack(
+                      children: [
+                        CustomPaint(
+                          size: const Size(15.0, 15.0),
+                          painter: _BezierPainter(
+                            color: color,
+                            drawEnd: index < _processes.length - 1,
+                          ),
+                        ),
+                        OutlinedDotIndicator(
+                          borderWidth: 4.0,
+                          color: color,
+                        ),
+                      ],
+                    );
+                  }
+                },
+                connectorBuilder: (_, index, type) {
+                  if (index > 0) {
+                    if (index == _processIndex) {
+                      final prevColor = getColor(index - 1);
+                      final color = getColor(index);
+                      List<Color> gradientColors;
+                      if (type == ConnectorType.start) {
+                        gradientColors = [
+                          Color.lerp(prevColor, color, 0.5)!,
+                          color
+                        ];
+                      } else {
+                        gradientColors = [
+                          prevColor,
+                          Color.lerp(prevColor, color, 0.5)!
+                        ];
+                      }
+                      return DecoratedLineConnector(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: gradientColors,
+                          ),
+                        ),
+                      );
+                    } else {
+                      return SolidLineConnector(
+                        color: getColor(index),
+                      );
+                    }
+                  } else {
+                    return null;
+                  }
+                },
+                itemCount: _processes.length,
+              ),
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            _processIndex = (_processIndex + 1) % _processes.length;
+            int index = int.tryParse(_controller.text) ?? 0;
+            if (index > _processes.length - 1) {
+              debugPrint('Index out of bounds. Setting it to first index');
+              index = 0;
+            }
+            _processIndex = index;
           });
         },
         backgroundColor: inProgressColor,
