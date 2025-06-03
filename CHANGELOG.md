@@ -1,3 +1,7 @@
+## 1.0.7
+
+* Updated README.md file.
+
 ## 1.0.6
 
 * Passed static analysis.
