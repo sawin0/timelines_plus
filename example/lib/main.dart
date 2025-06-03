@@ -1,3 +1,4 @@
+import 'package:example/showcase/vertical_timeline.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines_plus/timelines_plus.dart';
@@ -163,6 +164,10 @@ class ExamplePage extends StatelessWidget {
             _NavigationCard(
               name: 'Showcase',
               navigationBuilder: () => const ShowcasePage(),
+            ),
+            _NavigationCard(
+              name: 'Showcase',
+              navigationBuilder: () => const VerticalTimelinePage(),
             ),
           ],
         ),
