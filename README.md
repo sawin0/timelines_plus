@@ -1,7 +1,3 @@
-Note: this is just updated version of this package: https://pub.dev/packages/timelines
-
-[![banner](https://raw.github.com/chulwoo-park/timelines/main/design/feature_graphic.png)](https://github.com/chulwoo-park/timelines)
-
 <p align="center">
   <a href="https://pub.dartlang.org/packages/timelines_plus">
     <img src="https://img.shields.io/pub/v/timelines_plus.svg" alt="Pub" />
