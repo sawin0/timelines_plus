@@ -1,3 +1,7 @@
+## 1.0.8
+
+* Fix pub issues.
+
 ## 1.0.7
 
 * Updated README.md file.
