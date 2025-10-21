@@ -153,12 +153,6 @@ class ContainerIndicator extends Indicator {
           color: Colors.transparent,
         );
 
-  /// The widget below this widget in the tree.
-  ///
-  /// {@macro flutter.widgets.child}
-  // @override
-  // final Widget? child;
-
   @override
   Widget build(BuildContext context) {
     final size = getEffectiveSize(context);
@@ -183,16 +177,6 @@ class DotIndicator extends Indicator {
     super.border,
     super.child,
   });
-
-  /// The border to use when drawing the dot's outline.
-  // @override
-  // final BoxBorder? border;
-
-  /// The widget below this widget in the tree.
-  ///
-  /// {@macro flutter.widgets.child}
-  // @override
-  // final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -236,12 +220,6 @@ class OutlinedDotIndicator extends Indicator {
 
   /// The width of this outline, in logical pixels.
   final double borderWidth;
-
-  /// The widget below this widget in the tree.
-  ///
-  /// {@macro flutter.widgets.child}
-  // @override
-  // final Widget? child;
 
   @override
   Widget build(BuildContext context) {
