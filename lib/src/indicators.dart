@@ -148,7 +148,7 @@ class ContainerIndicator extends Indicator {
     super.key,
     super.size,
     super.position,
-    this.child,
+    super.child,
   }) : super(
           color: Colors.transparent,
         );
@@ -156,8 +156,8 @@ class ContainerIndicator extends Indicator {
   /// The widget below this widget in the tree.
   ///
   /// {@macro flutter.widgets.child}
-  @override
-  final Widget? child;
+  // @override
+  // final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -180,19 +180,19 @@ class DotIndicator extends Indicator {
     super.size,
     super.color,
     super.position,
-    this.border,
-    this.child,
+    super.border,
+    super.child,
   });
 
   /// The border to use when drawing the dot's outline.
-  @override
-  final BoxBorder? border;
+  // @override
+  // final BoxBorder? border;
 
   /// The widget below this widget in the tree.
   ///
   /// {@macro flutter.widgets.child}
-  @override
-  final Widget? child;
+  // @override
+  // final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -225,7 +225,7 @@ class OutlinedDotIndicator extends Indicator {
     super.position,
     this.backgroundColor,
     this.borderWidth = 2.0,
-    this.child,
+    super.child,
   })  : assert(size == null || size >= 0),
         assert(position == null || 0 <= position && position <= 1);
 
@@ -240,8 +240,8 @@ class OutlinedDotIndicator extends Indicator {
   /// The widget below this widget in the tree.
   ///
   /// {@macro flutter.widgets.child}
-  @override
-  final Widget? child;
+  // @override
+  // final Widget? child;
 
   @override
   Widget build(BuildContext context) {
