@@ -235,7 +235,7 @@ class TimelineTileBuilder {
   ///  * [TimelineTileBuilder.connected], which builds connected tiles.
   ///  * [TimelineTileBuilder.fromStyle], which builds tiles from style.
   factory TimelineTileBuilder.connectedFromStyle({
-    @required required int itemCount,
+    required int itemCount,
     ConnectionDirection connectionDirection = ConnectionDirection.after,
     NullableIndexedWidgetBuilder? contentsBuilder,
     NullableIndexedWidgetBuilder? oppositeContentsBuilder,
