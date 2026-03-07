@@ -1,0 +1,6 @@
+# Exclude editor-specific iOS workspace settings from published package.
+example/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+example/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+
+# Example app lockfile is not required for package consumers.
+example/pubspec.lock

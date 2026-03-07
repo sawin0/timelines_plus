@@ -47,6 +47,7 @@ gen-external-apklibs
 .packages
 # If you're building an application, you may want to check-in your pubspec.lock
 pubspec.lock
+!example/pubspec.lock
 
 # Directory created by dartdoc
 # If you don't generate documentation locally you can remove this line.
@@ -194,6 +195,8 @@ xcuserdata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
+!example/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+!example/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
 
 ### AndroidStudio ###
 # Covers files to be ignored for android development using Android Studio.

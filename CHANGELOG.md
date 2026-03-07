@@ -1,3 +1,8 @@
+## 2.0.0
+
+* Remove deprecated `@required` annotation usage and use Dart's built-in `required` keyword.
+* Pass static analysis with no issues.
+
 ## 1.0.8
 
 * Fix pub issues.
