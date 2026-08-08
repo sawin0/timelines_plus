@@ -204,7 +204,7 @@ class ProcessTimelinePageState extends State<ProcessTimelinePage> {
           });
         },
         backgroundColor: inProgressColor,
-        child: const Icon(FontAwesomeIcons.chevronRight),
+        child: const FaIcon(FontAwesomeIcons.chevronRight),
       ),
     );
   }
