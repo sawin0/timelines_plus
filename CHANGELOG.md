@@ -1,3 +1,7 @@
+## 2.0.1
+
+* Migrate deprecated cacheExtent to scrollCacheExtent
+
 ## 2.0.0
 
 * Remove deprecated `@required` annotation usage and use Dart's built-in `required` keyword.
