@@ -4,3 +4,6 @@ example/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
 
 # Example app lockfile is not required for package consumers.
 example/pubspec.lock
+
+# README screenshots are served from GitHub, not needed in the published package.
+screenshots/
