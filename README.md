@@ -16,8 +16,6 @@
 
 # Examples
 
-Check it out on the [web](https://pub.dev/packages/timelines_plus) or look at the [source code](https://github.com/sawin0/timelines_plus/tree/main/example).
-
 | Timeline status | Package delivery tracking | Process timeline |
 | - | - | - |
 | [![timeline_status](https://raw.githubusercontent.com/sawin0/timelines_plus/main/screenshots/timeline_status.gif)](https://github.com/sawin0/timelines_plus/blob/main/example/lib/showcase/timeline_status.dart) | [![package_delivery_tracking.gif](https://raw.githubusercontent.com/sawin0/timelines_plus/main/screenshots/package_delivery_tracking.gif)](https://github.com/sawin0/timelines_plus/blob/main/example/lib/showcase/package_delivery_tracking.dart) | [![process_timeline.gif](https://raw.githubusercontent.com/sawin0/timelines_plus/main/screenshots/process_timeline.gif)](https://github.com/sawin0/timelines_plus/blob/main/example/lib/showcase/process_timeline.dart) |
